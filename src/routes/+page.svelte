@@ -7,13 +7,15 @@
   import Uspsimage from "$lib/components/homepageComponents/Uspsimage.svelte";
   import Footer from "$lib/components/homepageComponents/Footer.svelte";
   import CalltoAction from "$lib/components/homepageComponents/CalltoAction.svelte";
-	import * as prismicH from "@prismicio/helpers";
+  import ColorBlocks from "$lib/components/aboutComponents/ColorBlocks.svelte";
+
 	export let data;
 	const { document } = data;
 
 	import { onMount } from "svelte";
 	import { gsap } from "gsap/dist/gsap";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 
 
 	onMount(() => {
@@ -42,10 +44,9 @@ gsap.utils.toArray(".wrapper").forEach(function(container) {
 
 <HeaderLuckykat />
 <Hero 
-heroTitle="Luckykat"
-heroLogo="/assets/logogeel.png"
-heroDescription="Ignite Your Online Presence: Unleashing Social Media's Power!"
-heroButton="Scroll down"
+heroTitle="LUCKY KAT"
+heroLogo="/assets/logo.svg"
+heroButton="Scroll down..."
 buttonImage ="/assets/scrolldown.png"
 />
 <!-- {#each data.document as data} -->
@@ -85,6 +86,7 @@ uspVideo={document[2].data.video.embed_url}
 	uspButton={document[0].data.infobutton}
 />
 <CalltoAction/>
+<ColorBlocks/>
 <Footer/>
 
 

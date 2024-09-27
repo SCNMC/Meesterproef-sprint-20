@@ -1,17 +1,19 @@
 <section>
-    <slot/>
+	<slot />
 </section>
 
 <style>
-    section{
-        display: flex;
-        flex-direction: column;
-    }
- 
- @media(min-width:60rem){
-  section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
- }
+	section {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 10em;
+	}
+
+	@media (min-width: 50rem) {
+		section {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			margin-bottom: 10em;
+		}
+	}
 </style>

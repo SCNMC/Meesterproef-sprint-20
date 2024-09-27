@@ -24,17 +24,16 @@
 </section>
 
 <style>
-
-	.wrapper{
+	.wrapper {
 		position: relative;
-    overflow: hidden;
+		overflow: hidden;
 	}
 
 	section {
 		/* height: 100vh; */
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 15em;
+		margin-bottom: 10em;
 		z-index: -2;
 	}
 	section > img {
@@ -42,21 +41,20 @@
 		height: 45vh;
 		object-fit: cover;
 		position: relative;
-
 	}
 
 	div {
 		display: grid;
 		grid-template-columns: 1fr;
-	position:sticky;
-	margin-top: -3.2em;
+		position: sticky;
+		margin-top: -3.2em;
 	}
 
 	h2 {
 		position: absolute;
 		z-index: 1;
 		background-color: white;
-		padding: 1em 1.5em;
+		padding: 1em 2em;
 		margin-top: -1em;
 		height: 1em;
 
@@ -98,8 +96,7 @@
 	}
 
 	@media (min-width: 40rem) {
-
-		p{
+		p {
 			padding: 1.5em;
 			text-align: center;
 		}
@@ -139,7 +136,7 @@
 		p {
 			text-align: center;
 			font-size: 1.4em;
-			padding: 2.5em;
+			padding: 1.8em;
 		}
 		section > img {
 			height: 65vh;

@@ -9,27 +9,10 @@
 
 <section style="--color:{workColor};--width:{width}">
 	<p>{@html prismicH.asText(workTitles)}</p>
-	<div class="divs">
-		<iframe src={workVideo} frameborder="" />
-	</div>
+	<img loading="lazy" src={prismicH.asImageSrc(workImages)} alt="#" />
 </section>
 
 <style>
-	.divs {
-		position: relative;
-		padding-top: 50.25%;
-		border-radius: 1.9em;
-	}
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		border: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-	}
-
 	section {
 		padding: 0.5em;
 		background: var(--color);
@@ -37,7 +20,7 @@
 	p {
 		position: absolute;
 		color: white;
-		padding: 2em 1em;
+		padding: 1em 1em;
 		z-index: 995;
 	}
 
@@ -50,20 +33,10 @@
 
 	@media (min-width: 60rem) {
 		img {
-			height: 40vh;
+			height: 22vh;
 		}
 		section {
-			padding: 1em;
-		}
-
-		.divs {
-			position: relative;
-			padding-top: 43.99%;
-		}
-
-		p {
-			font-size: 1em;
-			font-weight: bold;
+			padding: 2em;
 		}
 	}
 </style>

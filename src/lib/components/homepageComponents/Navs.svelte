@@ -7,41 +7,46 @@
 		open = !open;
 	};
 </script>
+
 <div>
-    <ul>
-		<NavLink  link='/Work' text='Work'  />
-		<NavLink link='/' text='About us'  />
-		<NavLink link='/' text='Contact'  />
-		
-		<!-- <li>Beoogde leerresultaten</li>
-		<li>Onderwijsleeromgeving</li>
-		<li>Toetsing</li>
-		<li>Gerealiseerde Leerresultaten</li> -->
+	<ul>
+		<NavLink link="/work" text="WORK" />
+		<NavLink link="/about" text="ABOUT" />
+		<li><a href="/contacts"> CONTACT</a></li>
 	</ul>
-	</div>
-	<Animatedhamburgers {open} {onClick} />
-    {#if open}
-		<nav transition:fly={{ y: -200, duration: 400 }}>
-			<a transition:fly={{y:-1000, duration:1100}} href="/Work">Work</a>
-			<a transition:fly={{y:-800, duration:1100}} href="./onderwijsleeromgeving">About us</a>
-			<a transition:fly={{y:- 600, duration:1100}}  href="./toetsing">Contact</a>
-		</nav>
-	{/if}
+</div>
+<Animatedhamburgers {open} {onClick} />
+{#if open}
+	<nav transition:fly={{ y: -200, duration: 400 }}>
+		<a transition:fly={{ y: -1000, duration: 1100 }} href="./work">Work</a>
+		<a transition:fly={{ y: -800, duration: 1100 }} href="./about">About us</a>
+		<a transition:fly={{ y: -600, duration: 1100 }} href="./contacts">Contact</a
+		>
+	</nav>
+{/if}
 
 <style>
-	div > ul{
+	ul {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		display: none;
 		list-style: none;
-		padding:1.7em;
+		padding: 1.5em 3em;
 		gap: 2em;
-
-
+		color: rebeccapurple;
+	}
+	ul :nth-child(3) {
+		text-align: center;
+		background-color: black;
+		color: white;
+		padding: 0.5em;
+		border-radius: 2em;
+		width: 6em;
+		font-size: 1.2em;
 	}
 
 	nav {
-
-
 		position: fixed;
 		display: flex;
 		gap: 2em;
@@ -51,13 +56,13 @@
 		background-color: #000;
 		width: 100%;
 		height: 100vh;
-		
+
 		top: 0;
 		left: 0;
-		z-index: 999;
+		z-index: 100;
 	}
-    nav > a {
-		margin: .5em;
+	nav > a {
+		margin: 0.5em;
 		font-size: 1.5em;
 		text-decoration: none;
 		color: white;
@@ -68,14 +73,13 @@
 		transition: inset 6s;
 		color: black;
 	}
- 
 
-    @media (min-width:50rem){
-      div >  ul{
-            display: inline;
+	@media (min-width: 50rem) {
+		div > ul {
+			display: inline;
 			display: flex;
 			flex-direction: row;
-			gap: 4em;
-        }
-}
+			gap: 3em;
+		}
+	}
 </style>

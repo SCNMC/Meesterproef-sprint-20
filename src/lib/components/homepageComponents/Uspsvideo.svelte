@@ -8,43 +8,15 @@
 	export let width = `${4}rem`;
 	export let buttonColor = `red`;
 	export let uspVideo;
-
-	import { onMount } from "svelte";
-	import { gsap } from "gsap/dist/gsap";
-	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-	
-	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);  
-
-gsap.utils.toArray(".divie").forEach(function(container) {
-    let videos = container.querySelector("iframe");
-  
-    let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          scrub: true,
-          pin: false,
-        },
-      }); 
-      tl.from(videos, {
-        yPercent: -15,
-        ease: "none",
-      }).to(videos, {
-        yPercent: 8,
-        ease: "none",
-      }); 
-  });
-	});
-
-	
 </script>
 
 <section>
 	<h2>{@html prismicH.asText(uspTitle)}</h2>
 	<div class="divie">
 		<div>
-			<iframe loading="lazy"
+			<iframe
 				src={uspVideo}
+				title="Iframe-video"
 				frameborder="0"
 				allow="autoplay; fullscreen; picture-in-picture"
 				allowfullscreen
@@ -68,7 +40,7 @@ gsap.utils.toArray(".divie").forEach(function(container) {
 	.divie {
 		position: relative;
 		overflow: hidden;
-padding-bottom: 43%;
+		padding-bottom: 43%;
 		width: 100%;
 	}
 
@@ -80,10 +52,9 @@ padding-bottom: 43%;
 		z-index: -3;
 	}
 	section {
-
 		/* height: 100vh; */
 		width: 100%;
-		margin-bottom: 15em;
+		margin-bottom: 10em;
 	}
 	img {
 		width: 100%;
@@ -94,15 +65,12 @@ padding-bottom: 43%;
 	div {
 		display: grid;
 		grid-template-columns: 1fr;
-		margin-top: -2em;
-
-	
 	}
 
 	h2 {
 		position: absolute;
 		background-color: white;
-		padding: 1em 1.5em;
+		padding: 1em 2em;
 		border-bottom-right-radius: 1em;
 		z-index: -1;
 		margin-top: -1em;
@@ -126,7 +94,7 @@ padding-bottom: 43%;
 	p {
 		background: var(--color);
 		color: white;
-		padding:1.5em;
+		padding: 1em 2em;
 	}
 	button {
 		display: flex;
@@ -144,17 +112,16 @@ padding-bottom: 43%;
 	}
 
 	@media (min-width: 40rem) {
-		p{
-			padding: 2.5em;
+		p {
+			padding: 1.5em;
 			text-align: center;
-	
 		}
 
 		div {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 0px 0px;
-			margin-top: -.5em;
+			margin-top: -0.5em;
 		}
 		h2 {
 			font-size: 1.5em;
@@ -165,8 +132,7 @@ padding-bottom: 43%;
 	}
 
 	@media (min-width: 75rem) {
-
-		.info{
+		.info {
 			margin-top: -12em;
 		}
 		h2 {
@@ -175,7 +141,7 @@ padding-bottom: 43%;
 		p {
 			text-align: center;
 			font-size: 1.4em;
-			padding: 2.5em;
+			padding: 1.8em;
 		}
 		section > img {
 			height: 60vh;
@@ -192,5 +158,3 @@ padding-bottom: 43%;
 		}
 	}
 </style>
-
-
